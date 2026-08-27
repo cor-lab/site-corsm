@@ -243,19 +243,7 @@
   .info-row .lbl{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
   .info-row .val{font-weight:500;font-size:16px}
   .info-row .val a:hover{color:var(--accent)}
-  .map{
-    border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;min-height:340px;position:relative;
-    background:
-      linear-gradient(var(--border) 1px,transparent 1px) 0 0/38px 38px,
-      linear-gradient(90deg,var(--border) 1px,transparent 1px) 0 0/38px 38px,
-      var(--surface-2);
-    display:grid;place-items:center;text-align:center;
-  }
-  .map .pin{position:relative;z-index:2}
-  .map .pin .p{width:52px;height:52px;border-radius:50% 50% 50% 4px;transform:rotate(45deg);margin:0 auto 14px;
-    background:var(--accent);box-shadow:0 0 0 8px var(--accent-soft),0 10px 24px var(--ring)}
-  .map .pin b{display:block;font-family:"Sora";font-weight:600}
-  .map .pin span{color:var(--muted);font-size:14px}
+  .map{border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;min-height:360px;box-shadow:var(--shadow)}
 
   /* footer */
   footer{background:var(--brand-deep);color:#CBCFE4;padding:56px 0 30px;margin-top:0}
@@ -343,7 +331,7 @@
       <div class="chip"><div class="k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18" stroke-linecap="round"/><circle cx="12" cy="12" r="9"/></svg>Cone Beam 3D</div><div class="v">Tomografia volumétrica de baixa dose</div></div>
       <div class="chip"><div class="k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3" stroke-linecap="round"/></svg>Laudo online</div><div class="v">Resultados publicados na internet</div></div>
       <div class="chip"><div class="k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2" stroke-linecap="round"/></svg>CORA 24/7</div><div class="v">Assistente virtual no WhatsApp, a qualquer hora</div></div>
-      <div class="chip"><div class="k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Dentista parceiro</div><div class="v">Requisições e programa de parceria</div></div>
+      <div class="chip"><div class="k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 12h10" stroke-linecap="round"/></svg>Escaneamento digital</div><div class="v">Moldagem digital, sem desconforto</div></div>
     </div></div>
   </div>
 
@@ -362,6 +350,7 @@
         <div class="card fade"><span class="tag">Cefalometria</span><h3>Traçado Cefalométrico Digital</h3><p>Análise cefalométrica computadorizada com marcação precisa de pontos e medidas para o ortodontista.</p></div>
         <div class="card fade"><span class="tag">Intraoral</span><h3>Periapical & Interproximal</h3><p>Radiografias digitais de alta resolução para diagnóstico de cáries, canais e lesões periapicais.</p></div>
         <div class="card fade"><span class="tag">Especiais</span><h3>ATM & Idade Óssea</h3><p>Exames da articulação temporomandibular e radiografia carpal para avaliação de crescimento.</p></div>
+        <div class="card fade"><span class="tag">Digital</span><h3>Escaneamento Intraoral</h3><p>Moldagem 100% digital com scanner intraoral, sem o desconforto da moldagem tradicional: modelos 3D de alta precisão para próteses, alinhadores e planejamento.</p></div>
       </div>
     </div>
   </section>
@@ -423,7 +412,6 @@
       </div>
       <div class="conv fade">
         <span class="pill">Unimed Card</span>
-        <span class="pill">Odontoplan</span>
         <span class="pill">Cauzzo</span>
         <span class="pill">PróVida</span>
         <span class="pill">Vida Card</span>
@@ -480,8 +468,11 @@
           </div>
           <div style="margin-top:22px"><a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=5555991668228" target="_blank" rel="noopener">Falar no WhatsApp</a></div>
         </div>
-        <div class="map fade" role="img" aria-label="Localização da COR no centro de Santa Maria">
-          <div class="pin"><div class="p"></div><b>COR Radiologia</b><span>Rua Professor Braga, 240 — Centro</span></div>
+        <div class="map fade">
+          <iframe src="https://www.google.com/maps?q=COR%20Centro%20Odontol%C3%B3gico%20de%20Radiologia%2C%20Rua%20Professor%20Braga%2C%20240%2C%20Santa%20Maria%2C%20RS&z=17&output=embed"
+                  style="border:0;width:100%;height:100%;min-height:360px;display:block"
+                  loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen title="Mapa — COR, Rua Professor Braga 240, Santa Maria/RS"></iframe>
         </div>
       </div>
     </div>
@@ -506,7 +497,6 @@
         <h4>Acesso rápido</h4>
         <a href="https://exames.corsm.com.br/" target="_blank" rel="noopener">Exames Online</a>
         <a href="requisicoes.html">Requisições Online</a>
-        <a href="https://cor.fidelimax.com.br/" target="_blank" rel="noopener">Dentista Parceiro</a>
         <a href="downloads.html">Downloads</a>
       </div>
     </div>
