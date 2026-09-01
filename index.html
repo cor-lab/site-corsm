@@ -32,23 +32,6 @@
     --radius:16px;
     --maxw:1140px;
   }
-  :root:not([data-theme="light"]){
-    @media (prefers-color-scheme: dark){
-      --brand-deep:#151729;
-      --brand:#2E3254;
-      --accent:#6FC556;
-      --accent-soft:#20301C;
-      --bg:#111321;
-      --surface:#181B2E;
-      --surface-2:#1F2338;
-      --ink:#E8EAF2;
-      --muted:#9BA0B8;
-      --border:#2A2E47;
-      --sand:#1B1E30;
-      --ring:rgba(111,197,86,.4);
-      --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 34px rgba(0,0,0,.35);
-    }
-  }
   :root[data-theme="dark"]{
     --brand-deep:#151729;
     --brand:#2E3254;
@@ -122,8 +105,32 @@
   .trust .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none;box-shadow:0 0 0 4px var(--accent-soft)}
   @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:8px}.hero-art{order:-1;max-width:360px}}
 
-  /* imaging graphic — radar */
-  .hero-art{width:100%;aspect-ratio:1/1;position:relative}
+  /* imaging graphic — diagnostic lightbox */
+  .hero-art{
+    width:100%;aspect-ratio:3/2;position:relative;border-radius:20px;overflow:hidden;
+    background:
+      linear-gradient(135deg,rgba(90,174,66,.08),transparent 42%),
+      url("hero-cbct.png") center/cover no-repeat #07111D;
+    border:1px solid color-mix(in srgb,var(--accent) 34%,var(--border));
+    box-shadow:0 28px 70px color-mix(in srgb,var(--brand-deep) 24%,transparent);
+    isolation:isolate;
+  }
+  .hero-art::before{
+    content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:
+      linear-gradient(90deg,rgba(4,14,26,.12),transparent 34%,transparent 76%,rgba(4,14,26,.18)),
+      linear-gradient(180deg,rgba(255,255,255,.035),transparent 22%,transparent 78%,rgba(0,0,0,.2));
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.045);
+  }
+  .hero-art::after{
+    content:"Tomografia Cone Beam · Visualização ilustrativa";
+    position:absolute;left:20px;bottom:18px;z-index:2;
+    font-family:"IBM Plex Mono",monospace;font-size:10px;line-height:1;
+    letter-spacing:.12em;text-transform:uppercase;color:#A9E398;
+    background:rgba(7,17,29,.76);border:1px solid rgba(111,197,86,.38);
+    padding:9px 12px;border-radius:999px;backdrop-filter:blur(8px);
+  }
+  .hero-art .radar{display:none}
   .radar{position:absolute;inset:4%;border-radius:50%;
     background:
       radial-gradient(circle at 50% 42%,color-mix(in srgb,var(--accent) 14%,transparent),transparent 62%),
@@ -178,9 +185,13 @@
   @media(max-width:860px){.grid3{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}}
   .card{
     background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-    padding:28px;box-shadow:var(--shadow);transition:transform .18s ease,border-color .18s ease;
+    padding:28px;box-shadow:0 1px 2px rgba(12,58,70,.035);
+    transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
   }
-  .card:hover{transform:translateY(-3px);border-color:var(--accent)}
+  .card:hover{
+    transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 70%,var(--border));
+    box-shadow:0 14px 34px color-mix(in srgb,var(--brand-deep) 10%,transparent);
+  }
   .card .ico{
     width:46px;height:46px;border-radius:12px;background:var(--accent-soft);color:var(--brand);
     display:grid;place-items:center;margin-bottom:16px;
@@ -192,26 +203,34 @@
   .card p{color:var(--muted);font-size:15.5px}
   .tag{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:inline-block;margin-bottom:12px}
 
-  /* digital access */
-  .digital{background:var(--brand-deep);color:#ECEEF6}
-  .digital .sec-head h2{color:#fff}
-  .digital .sec-head p{color:#B3B8D2}
+  /* online exams */
+  .digital{
+    background:linear-gradient(180deg,var(--surface-2),var(--bg));color:var(--ink);
+    border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  }
+  .digital .sec-head h2{color:var(--ink)}
+  .digital .sec-head p{color:var(--muted)}
   .digital .eyebrow{color:var(--accent)}
   .dcard{
-    background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);
-    padding:26px;transition:background .18s,transform .18s;display:flex;flex-direction:column;height:100%;
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+    padding:26px;box-shadow:0 1px 2px rgba(12,58,70,.035);
+    transition:background .18s,transform .18s,border-color .18s,box-shadow .18s;
+    display:flex;flex-direction:column;height:100%;
   }
-  .dcard:hover{background:rgba(255,255,255,.08);transform:translateY(-3px)}
-  .dcard .ico{width:44px;height:44px;border-radius:12px;background:rgba(90,174,66,.18);color:var(--accent);display:grid;place-items:center;margin-bottom:16px}
+  .dcard:hover{
+    background:var(--surface);transform:translateY(-3px);border-color:var(--accent);
+    box-shadow:0 14px 34px color-mix(in srgb,var(--brand-deep) 10%,transparent);
+  }
+  .dcard .ico{width:44px;height:44px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;margin-bottom:16px}
   .dcard .ico svg{width:24px;height:24px}
-  .dcard h3{color:#fff;font-size:18px;margin-bottom:7px}
-  .dcard p{color:#B3B8D2;font-size:15px;flex:1}
+  .dcard h3{color:var(--ink);font-size:18px;margin-bottom:7px}
+  .dcard p{color:var(--muted);font-size:15px;flex:1}
   .dcard .go{margin-top:16px;color:var(--accent);font-weight:600;font-size:14.5px;font-family:"Sora";display:inline-flex;align-items:center;gap:6px}
   .dcard:hover .go{gap:10px}
   .demo3d{margin-top:46px;text-align:center}
   .demo3d video{width:100%;max-width:880px;display:block;margin:0 auto;border-radius:16px;
-    border:1px solid rgba(255,255,255,.14);box-shadow:0 18px 50px rgba(0,0,0,.4);background:#000}
-  .demo3d p{color:#B3B8D2;font-size:14.5px;margin-top:14px}
+    border:1px solid var(--border);box-shadow:0 18px 50px color-mix(in srgb,var(--brand-deep) 15%,transparent);background:#000}
+  .demo3d p{color:var(--muted);font-size:14.5px;margin-top:14px}
 
   /* convenios */
   .conv-logos{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:24px}
@@ -280,7 +299,7 @@
     </a>
     <nav class="links">
       <a href="#servicos">Serviços</a>
-      <a href="#digital">Acesso digital</a>
+      <a href="https://exames.corsm.com.br/" target="_blank" rel="noopener">Exames online</a>
       <a href="#convenios">Convênios</a>
       <a href="#sobre">Sobre</a>
       <a href="#contato">Contato</a>
@@ -363,11 +382,11 @@
     </div>
   </section>
 
-  <!-- DIGITAL ACCESS -->
+  <!-- ONLINE EXAMS -->
   <section id="digital" class="digital">
     <div class="wrap">
       <div class="sec-head fade">
-        <span class="eyebrow">100% digital</span>
+        <span class="eyebrow">Exames online</span>
         <h2>Seus exames, sempre à mão</h2>
         <p>Paciente e dentista acompanham tudo pela internet — do agendamento à imagem final, com tecnologia desenvolvida pelo próprio COR.</p>
       </div>
@@ -504,7 +523,7 @@
       <div>
         <h4>Navegação</h4>
         <a href="#servicos">Serviços</a>
-        <a href="#digital">Acesso digital</a>
+        <a href="https://exames.corsm.com.br/" target="_blank" rel="noopener">Exames online</a>
         <a href="#convenios">Convênios</a>
         <a href="#contato">Contato</a>
       </div>
