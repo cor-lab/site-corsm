@@ -293,15 +293,57 @@
   .prose h2{font-size:22px;font-weight:600;margin:36px 0 10px}
   .prose p{color:var(--muted);margin:0 0 14px}
   .prose strong{color:var(--ink)}
+
+  /* COR 2026 — visual compartilhado */
+  :root,
+  :root:not([data-theme="light"]),
+  :root[data-theme="dark"]{
+    --brand-deep:#00152C;
+    --brand:#353858;
+    --accent:#5AAE42;
+    --accent-ink:#1D4F1D;
+    --accent-soft:#C5DBBC;
+    --bg:#BEC8D5;
+    --surface:#DEE4EC;
+    --surface-2:#A5B4C6;
+    --ink:#20233B;
+    --muted:#515A6F;
+    --border:#95A4B7;
+    --sand:#B1BCB0;
+    --ring:rgba(90,174,66,.35);
+    --shadow:0 1px 2px rgba(20,38,63,.045),0 8px 28px rgba(20,38,63,.065);
+  }
+  .eyebrow{color:var(--accent-ink)}
+  header.nav{
+    background:var(--brand-deep);backdrop-filter:none;
+    border-bottom:1px solid rgba(255,255,255,.12);
+    box-shadow:0 8px 24px rgba(0,12,28,.12);
+  }
+  .nav-in{height:88px}
+  .brand{padding:0}
+  .logo-img{height:60px;border-radius:11px;filter:none;box-shadow:none}
+  nav.links a{color:#B8C2D2}
+  nav.links a:hover{color:#FFFFFF}
+  .card{
+    box-shadow:0 1px 2px rgba(12,58,70,.035);
+    transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
+  }
+  .card:hover{
+    border-color:color-mix(in srgb,var(--accent) 70%,var(--border));
+    box-shadow:0 14px 34px color-mix(in srgb,var(--brand-deep) 10%,transparent);
+  }
+  footer{background:var(--brand-deep)}
+  footer .fbrand img{border-radius:11px}
+  @media(max-width:560px){.logo-img{height:44px}}
 </style>
 <header class="nav">
   <div class="wrap nav-in">
     <a class="brand" href="index.html">
-      <img class="logo-img" src="logo-cor.webp" alt="COR — Centro Odontológico de Radiologia">
+      <img class="logo-img" src="logo-cor-nova.png" alt="COR — Centro Odontológico de Radiologia">
     </a>
     <nav class="links">
       <a href="index.html#servicos">Serviços</a>
-      <a href="index.html#digital">Acesso digital</a>
+      <a href="https://exames.corsm.com.br/" target="_blank" rel="noopener">Exames online</a>
       <a href="index.html#convenios">Convênios</a>
       <a href="index.html#sobre">Sobre</a>
       <a href="index.html#contato">Contato</a>
@@ -335,13 +377,13 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="fbrand">
-        <img src="logo-cor.webp" alt="COR — Centro Odontológico de Radiologia" style="height:68px;width:auto;display:block">
+        <img src="logo-cor-nova.png" alt="COR — Centro Odontológico de Radiologia" style="height:68px;width:auto;display:block">
         <p>Centro Odontológico de Radiologia — imagem odontológica de alta precisão em Santa Maria / RS.</p>
       </div>
       <div>
         <h4>Navegação</h4>
         <a href="index.html#servicos">Serviços</a>
-        <a href="index.html#digital">Acesso digital</a>
+        <a href="https://exames.corsm.com.br/" target="_blank" rel="noopener">Exames online</a>
         <a href="index.html#convenios">Convênios</a>
         <a href="index.html#contato">Contato</a>
       </div>
