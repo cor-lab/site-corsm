@@ -16,19 +16,20 @@
 
 <style>
   :root{
-    --brand-deep:#232642;
+    --brand-deep:#00152C;
     --brand:#353858;
     --accent:#5AAE42;
-    --accent-soft:#EAF5E3;
-    --bg:#F5F6F8;
-    --surface:#FFFFFF;
-    --surface-2:#EFF1F4;
+    --accent-ink:#1D4F1D;
+    --accent-soft:#C5DBBC;
+    --bg:#BEC8D5;
+    --surface:#DEE4EC;
+    --surface-2:#A5B4C6;
     --ink:#20233B;
-    --muted:#5F647E;
-    --border:#E1E4EC;
-    --sand:#F2F4EE;
+    --muted:#515A6F;
+    --border:#95A4B7;
+    --sand:#B1BCB0;
     --ring:rgba(90,174,66,.35);
-    --shadow:0 1px 2px rgba(12,58,70,.05),0 8px 30px rgba(12,58,70,.07);
+    --shadow:0 1px 2px rgba(20,38,63,.045),0 8px 28px rgba(20,38,63,.065);
     --radius:16px;
     --maxw:1140px;
   }
@@ -61,7 +62,7 @@
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
   .eyebrow{
     font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:500;
-    letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+    letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);
   }
   .btn{
     display:inline-flex;align-items:center;gap:.5em;border-radius:999px;
@@ -76,17 +77,25 @@
 
   /* header */
   header.nav{
-    position:sticky;top:0;z-index:50;backdrop-filter:saturate(1.4) blur(10px);
-    background:color-mix(in srgb,var(--bg) 82%,transparent);
-    border-bottom:1px solid var(--border);
+    position:sticky;top:0;z-index:50;
+    background:var(--brand-deep);
+    border-bottom:1px solid rgba(255,255,255,.12);
+    box-shadow:0 8px 24px rgba(0,12,28,.12);
   }
-  .nav-in{display:flex;align-items:center;gap:24px;height:92px}
-  .brand{display:flex;align-items:center;padding:0}
-  .logo-img{height:64px;width:auto;display:block;filter:drop-shadow(0 2px 6px rgba(35,38,66,.16))}
-  @media(max-width:560px){.logo-img{height:48px}}
+  .nav-in{display:flex;align-items:center;gap:24px;height:88px}
+  .brand{
+    display:flex;align-items:center;padding:0;
+  }
+  .logo-img{
+    height:60px;width:auto;display:block;border-radius:11px;
+    filter:none;box-shadow:none;
+  }
+  @media(max-width:560px){
+    .logo-img{height:44px}
+  }
   nav.links{display:flex;gap:26px;margin-left:auto}
-  nav.links a{font-size:15px;color:var(--muted);font-weight:500;transition:color .15s}
-  nav.links a:hover{color:var(--ink)}
+  nav.links a{font-size:15px;color:#B8C2D2;font-weight:500;transition:color .15s}
+  nav.links a:hover{color:#FFFFFF}
   .nav-cta{margin-left:8px}
   @media(max-width:900px){nav.links{display:none}.nav-cta{margin-left:auto}}
 
@@ -210,7 +219,7 @@
   }
   .digital .sec-head h2{color:var(--ink)}
   .digital .sec-head p{color:var(--muted)}
-  .digital .eyebrow{color:var(--accent)}
+  .digital .eyebrow{color:var(--accent-ink)}
   .dcard{
     background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
     padding:26px;box-shadow:0 1px 2px rgba(12,58,70,.035);
@@ -234,7 +243,7 @@
 
   /* convenios */
   .conv-logos{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:24px}
-  .logo-card{background:#FFFFFF;border:1px solid var(--border);border-radius:var(--radius);
+  .logo-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
     padding:18px 34px;display:grid;place-items:center;box-shadow:var(--shadow);
     transition:transform .18s ease,border-color .18s ease}
   .logo-card:hover{transform:translateY(-3px);border-color:var(--accent)}
@@ -280,6 +289,7 @@
   footer a{color:#CBCFE4;font-size:14.5px;display:block;padding:4px 0;transition:color .15s}
   footer a:hover{color:var(--accent)}
   footer .fbrand b{color:#fff;font-family:"Sora";font-size:20px}
+  footer .fbrand img{border-radius:11px}
   footer .fbrand p{color:#A4A9C6;font-size:14px;margin-top:10px;max-width:34ch}
   .foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:22px;color:#8B90B0;font-size:13px}
 
@@ -295,7 +305,7 @@
 <header class="nav">
   <div class="wrap nav-in">
     <a class="brand" href="#top">
-      <img class="logo-img" src="logo-cor.webp" alt="COR — Centro Odontológico de Radiologia">
+      <img class="logo-img" src="logo-cor-nova.png" alt="COR — Centro Odontológico de Radiologia">
     </a>
     <nav class="links">
       <a href="#servicos">Serviços</a>
@@ -517,7 +527,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="fbrand">
-        <img src="logo-cor.webp" alt="COR — Centro Odontológico de Radiologia" style="height:68px;width:auto;display:block">
+        <img src="logo-cor-nova.png" alt="COR — Centro Odontológico de Radiologia" style="height:68px;width:auto;display:block">
         <p>Centro Odontológico de Radiologia — imagem odontológica de alta precisão em Santa Maria / RS.</p>
       </div>
       <div>
