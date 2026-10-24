@@ -5,19 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Política de Privacidade — COR Radiologia</title>
 <meta name="description" content="Política de privacidade e proteção de dados (LGPD) do COR — Centro Odontológico de Radiologia, Santa Maria/RS.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<!-- ===== Google tag (gtag.js) - GA4 corsm.com.br ===== -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YBKZR34W8F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied','ad_user_data': 'denied','ad_personalization': 'denied',
+    'analytics_storage': 'denied','functionality_storage': 'granted',
+    'security_storage': 'granted','wait_for_update': 500
+  });
+  try {
+    if (localStorage.getItem('cor_consent') === 'granted') {
+      gtag('consent','update',{'ad_storage':'granted','ad_user_data':'granted',
+        'ad_personalization':'granted','analytics_storage':'granted'});
+    }
+  } catch(e){}
+  gtag('js', new Date());
+  gtag('config', 'G-YBKZR34W8F', { 'anonymize_ip': true });
+</script>
+<!-- ===== /Google tag ===== -->
 <meta name="theme-color" content="#00152C">
 <link rel="canonical" href="https://corsm.com.br/privacidade.html">
 <link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
 <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="canonical" href="https://corsm.com.br/">
-<meta property="og:site_name" content="COR — Centro Odontológico de Radiologia">
-<meta property="og:title" content="COR — Centro Odontológico de Radiologia">
-<meta property="og:description" content="Radiologia odontológica em Santa Maria/RS — Tomografia Cone Beam, exames online e atendimento 24/7 pela CORA.">
-<meta property="og:image" content="https://corsm.com.br/og-cor.png">
-<meta property="og:url" content="https://corsm.com.br/">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
@@ -577,10 +590,10 @@
   <div class="wrap prose-grid">
     <nav class="toc fade" aria-label="Sumário">
       <div class="lbl">Nesta página</div>
-      <a href="#quem-somos"><span>01</span>Quem somos</a><a href="#dados"><span>02</span>Dados que coletamos</a><a href="#coleta"><span>03</span>Como coletamos</a><a href="#cora"><span>04</span>Assistente Virtual (CORA) e WhatsApp</a><a href="#uso"><span>05</span>Como utilizamos seus dados</a><a href="#compartilhamento"><span>06</span>Compartilhamento de dados</a><a href="#seguranca"><span>07</span>Armazenamento e segurança</a><a href="#direitos"><span>08</span>Seus direitos</a><a href="#alteracoes"><span>09</span>Alterações desta Política</a><a href="#contato"><span>10</span>Contato</a>
+      <a href="#quem-somos"><span>01</span>Quem somos</a><a href="#dados"><span>02</span>Dados que coletamos</a><a href="#coleta"><span>03</span>Como coletamos</a><a href="#cora"><span>04</span>Assistente Virtual (CORA) e WhatsApp</a><a href="#uso"><span>05</span>Como utilizamos seus dados</a><a href="#compartilhamento"><span>06</span>Compartilhamento de dados</a><a href="#seguranca"><span>07</span>Armazenamento e segurança</a><a href="#cookies"><span>08</span>Cookies e dados de navegação</a><a href="#direitos"><span>09</span>Seus direitos</a><a href="#alteracoes"><span>10</span>Alterações desta Política</a><a href="#contato"><span>11</span>Contato</a>
     </nav>
     <article class="prose fade d1">
-      <p class="meta">Última atualização: julho de 2026</p>
+      <p class="meta">Última atualização: outubro de 2026</p>
       <p class="intro" style="margin-top:14px">O COR — Centro Odontológico de Radiologia ("COR", "nós") valoriza a privacidade e a proteção dos dados pessoais de seus pacientes e usuários. Esta Política de Privacidade descreve como coletamos, utilizamos, armazenamos e protegemos as informações pessoais, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).</p>
 
       <h2 id="quem-somos"><span>01</span>Quem somos</h2>
@@ -597,6 +610,7 @@
         <li><strong>Dados de identificação:</strong> nome completo, data de nascimento, CPF.</li>
         <li><strong>Dados de contato:</strong> número de telefone/WhatsApp, e-mail.</li>
         <li><strong>Dados de saúde:</strong> exames de imagem odontológica e radiológica (documentações, tomografias, radiografias, escaneamentos) e informações relacionadas ao atendimento, considerados dados pessoais sensíveis pela LGPD.</li>
+        <li><strong>Dados de navegação:</strong> informações técnicas coletadas no site (páginas visitadas, origem do acesso, tipo de dispositivo e navegador), de forma agregada e apenas mediante o seu consentimento. Esses dados não são vinculados aos seus dados de saúde.</li>
         <li><strong>Dados de agendamento:</strong> informações sobre exames solicitados, profissional indicante (dentista) e convênio ou forma de pagamento.</li>
       </ul>
 
@@ -642,14 +656,25 @@
       <p>Adotamos medidas técnicas e organizacionais para proteger seus dados contra acesso não autorizado, perda ou uso indevido. O acesso a exames online é protegido por confirmação de identidade e links de acesso individuais.</p>
       <p>Mantemos os dados pelo período necessário ao atendimento e ao cumprimento de obrigações legais.</p>
 
-      <h2 id="direitos"><span>08</span>Seus direitos</h2>
+      <h2 id="cookies"><span>08</span>Cookies e dados de navegação</h2>
+      <p>Cookies são pequenos arquivos gravados no seu navegador. Utilizamos duas categorias:</p>
+      <ul>
+        <li><strong>Essenciais:</strong> necessários ao funcionamento do site e à memória da sua escolha sobre cookies. Não dependem de consentimento.</li>
+        <li><strong>Analíticos:</strong> fornecidos pelo Google Analytics, permitem entender de forma agregada como o site é utilizado (páginas mais acessadas, origem das visitas, dispositivos). <strong>Só são ativados após o seu aceite.</strong></li>
+      </ul>
+      <p>Enquanto você não aceita, nenhum cookie analítico é gravado — o consentimento vem desativado por padrão. O endereço IP é anonimizado antes do armazenamento.</p>
+      <div class="callout">Nenhum dado de exame, laudo, imagem ou informação de saúde é coletado, transmitido ou associado a cookies neste site. O portal de exames opera em ambiente separado, com autenticação própria.</div>
+      <p>Você pode rever sua escolha a qualquer momento em <a href="#privacidade-cookies" style="color:var(--green-600)"><strong>Preferências de cookies</strong></a>, ou apagar os cookies nas configurações do seu navegador.</p>
+      <p>Base legal: consentimento (art. 7º, I, da LGPD) para cookies analíticos; legítimo interesse para cookies estritamente essenciais.</p>
+
+      <h2 id="direitos"><span>09</span>Seus direitos</h2>
       <p>Nos termos da LGPD, você pode solicitar: confirmação da existência de tratamento; acesso aos seus dados; correção de dados incompletos ou desatualizados; anonimização, bloqueio ou eliminação de dados desnecessários; portabilidade; informação sobre compartilhamento; e revogação do consentimento.</p>
       <p>Para exercer seus direitos, entre em contato por e-mail <a href="mailto:cor@corsm.com.br" style="color:var(--green-600)">cor@corsm.com.br</a> ou pelos telefones da clínica.</p>
 
-      <h2 id="alteracoes"><span>09</span>Alterações desta Política</h2>
+      <h2 id="alteracoes"><span>10</span>Alterações desta Política</h2>
       <p>Esta Política pode ser atualizada periodicamente. A versão vigente estará sempre disponível nesta página, com a data da última atualização.</p>
 
-      <h2 id="contato"><span>10</span>Contato</h2>
+      <h2 id="contato"><span>11</span>Contato</h2>
       <p>Em caso de dúvidas sobre esta Política ou sobre o tratamento dos seus dados pessoais:</p>
       <div class="who"><b>COR — Centro Odontológico de Radiologia</b>
       Rua Professor Braga, 240, loja 1 — Santa Maria/RS<br>
@@ -691,7 +716,8 @@
     </div>
     <div class="foot-bottom">
       <span>© 2026 COR — Centro Odontológico de Radiologia · CRO/RS EPAO-1614</span>
-      <a href="privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a>
+      <a href="privacidade.html">Política de Privacidade</a>
+      <a href="#privacidade-cookies">Preferências de cookies</a>
     </div>
   </div>
 </footer>
@@ -712,5 +738,71 @@
     window.addEventListener('resize',function(){if(window.innerWidth>920)set(false)});
   })();
 </script>
+
+<!-- ===== Banner de consentimento (LGPD) ===== -->
+<style>
+  #corConsent{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;display:none;
+    background:#00152C;color:#E6ECF5;border:1px solid rgba(255,255,255,.14);
+    border-radius:14px;padding:18px 20px;max-width:760px;margin:0 auto;
+    box-shadow:0 18px 50px rgba(0,21,44,.45);
+    font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:14px;line-height:1.55}
+  #corConsent.show{display:block}
+  #corConsent p{margin:0 0 14px}
+  #corConsent a{color:#8FD67A;text-decoration:underline}
+  #corConsent .cc-acts{display:flex;gap:10px;flex-wrap:wrap}
+  #corConsent button{font:inherit;font-weight:600;cursor:pointer;border-radius:10px;
+    padding:10px 18px;border:1px solid transparent;transition:filter .15s,background .15s}
+  #corConsent .cc-ok{background:#5AAE42;color:#06230A}
+  #corConsent .cc-ok:hover{filter:brightness(1.08)}
+  #corConsent .cc-no{background:transparent;color:#C7D0DF;border-color:rgba(255,255,255,.28)}
+  #corConsent .cc-no:hover{background:rgba(255,255,255,.07)}
+  @media (max-width:560px){#corConsent .cc-acts button{flex:1 1 100%}}
+  @media (prefers-reduced-motion:reduce){#corConsent button{transition:none}}
+</style>
+<div id="corConsent" role="dialog" aria-live="polite" aria-label="Aviso de privacidade">
+  <p>Usamos cookies de analise para entender como o site e utilizado e melhorar o atendimento.
+     Nenhum dado de exame ou informacao de saude e coletado aqui.
+     Veja a <a href="privacidade.html">Politica de Privacidade</a>.</p>
+  <div class="cc-acts">
+    <button type="button" class="cc-ok" id="ccAceitar">Aceitar</button>
+    <button type="button" class="cc-no" id="ccRecusar">Recusar</button>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY = 'cor_consent';
+  var box = document.getElementById('corConsent');
+  if (!box) return;
+
+  function salvo(){ try { return localStorage.getItem(KEY); } catch(e){ return null; } }
+  function grava(v){ try { localStorage.setItem(KEY, v); } catch(e){} }
+
+  function decide(v){
+    grava(v);
+    if (typeof gtag === 'function') {
+      var g = (v === 'granted') ? 'granted' : 'denied';
+      gtag('consent', 'update', {
+        'ad_storage': g, 'ad_user_data': g,
+        'ad_personalization': g, 'analytics_storage': g
+      });
+    }
+    box.classList.remove('show');
+  }
+
+  if (!salvo()) box.classList.add('show');
+
+  document.getElementById('ccAceitar').addEventListener('click', function(){ decide('granted'); });
+  document.getElementById('ccRecusar').addEventListener('click', function(){ decide('denied'); });
+
+  // permite reabrir a escolha: <a href="#privacidade-cookies">Preferencias de cookies</a>
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a[href="#privacidade-cookies"]') : null;
+    if (!a) return;
+    e.preventDefault();
+    box.classList.add('show');
+  });
+})();
+</script>
+<!-- ===== /Banner de consentimento ===== -->
 </body>
 </html>

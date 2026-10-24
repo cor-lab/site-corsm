@@ -5,19 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Downloads — COR Radiologia</title>
 <meta name="description" content="Visualizadores 3Shape 3D Viewer e i-CAT Vision para abrir exames e modelos 3D do COR no seu computador.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<!-- ===== Google tag (gtag.js) - GA4 corsm.com.br ===== -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YBKZR34W8F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied','ad_user_data': 'denied','ad_personalization': 'denied',
+    'analytics_storage': 'denied','functionality_storage': 'granted',
+    'security_storage': 'granted','wait_for_update': 500
+  });
+  try {
+    if (localStorage.getItem('cor_consent') === 'granted') {
+      gtag('consent','update',{'ad_storage':'granted','ad_user_data':'granted',
+        'ad_personalization':'granted','analytics_storage':'granted'});
+    }
+  } catch(e){}
+  gtag('js', new Date());
+  gtag('config', 'G-YBKZR34W8F', { 'anonymize_ip': true });
+</script>
+<!-- ===== /Google tag ===== -->
 <meta name="theme-color" content="#00152C">
 <link rel="canonical" href="https://corsm.com.br/downloads.html">
 <link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
 <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="canonical" href="https://corsm.com.br/">
-<meta property="og:site_name" content="COR — Centro Odontológico de Radiologia">
-<meta property="og:title" content="COR — Centro Odontológico de Radiologia">
-<meta property="og:description" content="Radiologia odontológica em Santa Maria/RS — Tomografia Cone Beam, exames online e atendimento 24/7 pela CORA.">
-<meta property="og:image" content="https://corsm.com.br/og-cor.png">
-<meta property="og:url" content="https://corsm.com.br/">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
@@ -635,7 +648,8 @@
     </div>
     <div class="foot-bottom">
       <span>© 2026 COR — Centro Odontológico de Radiologia · CRO/RS EPAO-1614</span>
-      <a href="privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a>
+      <a href="privacidade.html">Política de Privacidade</a>
+      <a href="#privacidade-cookies">Preferências de cookies</a>
     </div>
   </div>
 </footer>
@@ -656,5 +670,71 @@
     window.addEventListener('resize',function(){if(window.innerWidth>920)set(false)});
   })();
 </script>
+
+<!-- ===== Banner de consentimento (LGPD) ===== -->
+<style>
+  #corConsent{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;display:none;
+    background:#00152C;color:#E6ECF5;border:1px solid rgba(255,255,255,.14);
+    border-radius:14px;padding:18px 20px;max-width:760px;margin:0 auto;
+    box-shadow:0 18px 50px rgba(0,21,44,.45);
+    font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:14px;line-height:1.55}
+  #corConsent.show{display:block}
+  #corConsent p{margin:0 0 14px}
+  #corConsent a{color:#8FD67A;text-decoration:underline}
+  #corConsent .cc-acts{display:flex;gap:10px;flex-wrap:wrap}
+  #corConsent button{font:inherit;font-weight:600;cursor:pointer;border-radius:10px;
+    padding:10px 18px;border:1px solid transparent;transition:filter .15s,background .15s}
+  #corConsent .cc-ok{background:#5AAE42;color:#06230A}
+  #corConsent .cc-ok:hover{filter:brightness(1.08)}
+  #corConsent .cc-no{background:transparent;color:#C7D0DF;border-color:rgba(255,255,255,.28)}
+  #corConsent .cc-no:hover{background:rgba(255,255,255,.07)}
+  @media (max-width:560px){#corConsent .cc-acts button{flex:1 1 100%}}
+  @media (prefers-reduced-motion:reduce){#corConsent button{transition:none}}
+</style>
+<div id="corConsent" role="dialog" aria-live="polite" aria-label="Aviso de privacidade">
+  <p>Usamos cookies de analise para entender como o site e utilizado e melhorar o atendimento.
+     Nenhum dado de exame ou informacao de saude e coletado aqui.
+     Veja a <a href="privacidade.html">Politica de Privacidade</a>.</p>
+  <div class="cc-acts">
+    <button type="button" class="cc-ok" id="ccAceitar">Aceitar</button>
+    <button type="button" class="cc-no" id="ccRecusar">Recusar</button>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY = 'cor_consent';
+  var box = document.getElementById('corConsent');
+  if (!box) return;
+
+  function salvo(){ try { return localStorage.getItem(KEY); } catch(e){ return null; } }
+  function grava(v){ try { localStorage.setItem(KEY, v); } catch(e){} }
+
+  function decide(v){
+    grava(v);
+    if (typeof gtag === 'function') {
+      var g = (v === 'granted') ? 'granted' : 'denied';
+      gtag('consent', 'update', {
+        'ad_storage': g, 'ad_user_data': g,
+        'ad_personalization': g, 'analytics_storage': g
+      });
+    }
+    box.classList.remove('show');
+  }
+
+  if (!salvo()) box.classList.add('show');
+
+  document.getElementById('ccAceitar').addEventListener('click', function(){ decide('granted'); });
+  document.getElementById('ccRecusar').addEventListener('click', function(){ decide('denied'); });
+
+  // permite reabrir a escolha: <a href="#privacidade-cookies">Preferencias de cookies</a>
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a[href="#privacidade-cookies"]') : null;
+    if (!a) return;
+    e.preventDefault();
+    box.classList.add('show');
+  });
+})();
+</script>
+<!-- ===== /Banner de consentimento ===== -->
 </body>
 </html>
