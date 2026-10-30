@@ -46,10 +46,10 @@
       </header>
       <div class="body">
         <p class="intro">Como posso ajudar você hoje? <strong>Vamos conversar pelo WhatsApp.</strong></p>
-        <a class="action primary" href="https://wa.me/5555991668228" target="_blank" rel="noopener noreferrer">Falar com a CORA <span aria-hidden="true">↗</span></a>
+        <a class="action primary" href="https://wa.me/5555999436056" target="_blank" rel="noopener noreferrer">Falar com a CORA <span aria-hidden="true">↗</span></a>
         <a class="action" href="https://exames.corsm.com.br" target="_blank" rel="noopener noreferrer">Acessar meus resultados <span aria-hidden="true">↗</span></a>
-        <a class="action" href="https://wa.me/5555991668228?text=Ol%C3%A1%21%20Preciso%20de%20ajuda%20para%20acessar%20meus%20exames." target="_blank" rel="noopener noreferrer">Preciso de ajuda com meu acesso <span aria-hidden="true">↗</span></a>
-        <p class="note">Atendimento virtual 24 horas.<br>WhatsApp: (55) 99166-8228</p>
+        <a class="action" href="https://wa.me/5555999436056?text=Ol%C3%A1%21%20Preciso%20de%20ajuda%20para%20acessar%20meus%20exames." target="_blank" rel="noopener noreferrer">Preciso de ajuda com meu acesso <span aria-hidden="true">↗</span></a>
+        <p class="note">Atendimento virtual 24 horas.<br>CORA: (55) 99943-6056<br>Clínica: <a href="https://wa.me/5555991668228" target="_blank" rel="noopener noreferrer">(55) 99166-8228</a></p>
       </div>
     </section>
     <button class="launcher" type="button" aria-expanded="false" aria-controls="cora-panel" aria-label="Abrir atendimento com a CORA">
